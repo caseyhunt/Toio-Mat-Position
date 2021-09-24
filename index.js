@@ -226,6 +226,8 @@ function handleNotifications(event) {
   // console.log(value);
 
   let value = event.target.value;
+  console.log(value);
+  console.log(value.getInt16(1, true));
 let a = [];
 // Convert raw data bytes to hex values just for the sake of showing something.
 // In the "real" world, you'd use data.getUint8, data.getUint16 or even
@@ -233,14 +235,17 @@ let a = [];
 for (let i = 0; i < value.byteLength; i++) {
   a.push('0x' + ('00' + value.getUint8(i).toString(16)).slice(-2));
 }
-var xpos = parseInt(a[1], 16);
-var ypos = parseInt(a[3], 16);
-var angle = parseInt(a[5], 16);
+
+console.log(a);
+
+var xpos = value.getInt16(1, true).toString();
+var ypos = value.getInt16(3, true).toString();
+var angle = value.getInt16(5, true).toString();
 console.log("x: ", xpos, "y: ", ypos, "angle: ", angle);
 document.getElementById("xpos").innerHTML = "x position: " + xpos;
 document.getElementById("ypos").innerHTML = "y position: " + ypos;
 document.getElementById("angle").innerHTML = "angle (degrees): " + angle;
-console.log(a);
+
 //console.log('> ' + a.join(' '));
 
 }
