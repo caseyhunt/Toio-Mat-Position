@@ -240,7 +240,7 @@ console.log("x: ", xpos, "y: ", ypos, "angle: ", angle);
 document.getElementById("xpos").innerHTML = "x position: " + xpos;
 document.getElementById("ypos").innerHTML = "y position: " + ypos;
 document.getElementById("angle").innerHTML = "angle (degrees): " + angle;
-//console.log(a);
+console.log(a);
 //console.log('> ' + a.join(' '));
 
 }
